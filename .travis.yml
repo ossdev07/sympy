@@ -15,9 +15,16 @@ env:
     - secure: "YIEZal9EBTL+fg2YmoZoS8Bvt3eAVUOZjb38CtqpzR2CCSXWoUk35KG23m2NknlY1iKfYJyt7XWBszT/VKOQEbWQq7PIakV4vIByrWacgBxy1x3WC+rZoW7TX+JJiL+y942qIYbMoNMMB8xFpE5RDLSjSecMpFhJJXoafVTvju8="
 dist: trusty
 
-python:
-  - 2.7
-  - 3.5
+matrix:
+  include:
+    - arch: arm64
+      python: 2.7
+    - arch: amd64
+      python: 2.7
+    - arch: arm64
+      python: 3.5
+    - arch: amd64
+      python: 3.5
 
 matrix:
   fast_finish: true
